@@ -64,3 +64,29 @@ button{
 button:hover{
     background: rgb(48,20,9);
 }
+@media(max-width: 800px){
+    #image{
+        margin: 0 50px;
+        justify-self: center;
+        width: 200px;
+    }
+    body{
+        font-size: 15px;
+    }
+    #main{
+        width: 300px;
+        flex-direction: column;
+        padding: 10px 10px;
+    }
+    #inf{
+        padding: 0;
+        margin: 10px 10px 0 10px;
+    }
+    .iden{
+        text-align: center;
+    }
+    .info-ind{
+        text-align: center;
+        font-size: 30px;
+    }
+}
