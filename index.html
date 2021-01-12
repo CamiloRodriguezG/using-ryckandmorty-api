@@ -4,14 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="rick&morty/index.css">
-    <link rel="icon" type="image/png" href="https://preview.redd.it/s3405xps9fs11.png?auto=webp&s=260cc1a5b9074be949a7edbbefc36b5c7458d5ce" />
+    <link rel="stylesheet" href="src/index.css">
+    <link rel="icon" type="image/png" href="https://rickandmortyapi.com/api/character/avatar/66.jpeg" />
     <title>Random Rick and Morty characters</title>
 </head>
 <body>
-    <div id="main"></div>
-    <button id="boton" onclick="change()">Get random character</button>
-    <script src="rick&morty/index.js"></script>
+    <nav id="navbar">
+        <button class="come-btn" onclick="location.reload()">
+            <img class="come" src="https://rickandmortyapi.com/api/character/avatar/66.jpeg" alt="come to random characters">
+        </button>
+        <div id="search-field">
+            <div id="filters">
+                <input id="name-field" type="text" placeholder="Character name ( obligatory )">
+                <select name="species" id="species-dropdown" class="dropdown">
+                    <option value="none">Select species (optional)</option>
+                    <option value="Human">Human</option>
+                    <option value="Humanoid">Humanoid</option>
+                    <option value="Alien">Alien</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+                <select name="species" id="status-dropdown" class="dropdown">
+                    <option value="none">Select status (optional)</option>
+                    <option value="Alive">Alive</option>
+                    <option value="Dead">Dead</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
+            <div id="direct-search">
+                <button id="search-button" onclick="searchCharacter()">Search</button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <h1>Random Rick and Morty character generator</h1>
+        <div id="flex">
+            <div id="main"></div>
+            <button id="boton" onclick="change()">Get random character</button>
+        </div>
+    </main>
+    <footer id="footer">
+        <div>
+            Made by Camilo Rodriguez with the <a id="api-text" href="https://rickandmortyapi.com/">Rick and Morty API</a>
+        </div>
+        <div>
+            <a class="icon" target="_blank" href="https://github.com/CamiloRodriguezG"><i  class="icon fab fa-github"></i></a>
+            <a class="icon" target="_blank" href="https://twitter.com/Camilo13078226"><i  class="icon fab fa-twitter"></i></a>
+            <a class="icon" target="_blank" href="https://camilorodriguezg.github.io/frases-random/"><i  class="icon fas fa-quote-right"></i></a>
+        </div>
+    </footer>
+    <script src="src/index.js"></script>
 </body>
 </html>
