@@ -2,24 +2,132 @@
     transition: all 0.5s ease-in-out;
 }
 html{
-    overflow: hidden;
+    position: relative;
 }
 body{
     height: 100vh;
-    background: linear-gradient(90deg, rgb(228,167,136), rgb(228, 190, 150));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: rgb(228,167,136);
     font-size: 20px;
 }
+h1{
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    margin: 10px 0 20px 0;
+}
+h2{
+    color: rgb(200, 30, 50);
+}
+#navbar{
+    background-color: #eee;
+    margin: -7px -8px 0 -8px;
+    padding: 10px 20px;
+    display: flex;
+}
+.come-btn{
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.come{
+    margin: 0;
+    border-radius: 50%;
+    width: 50px;
+}
+#search-field{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 100%;
+}
+#name-field{
+    outline: none;
+    border: none;
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.dropdown{
+    cursor: pointer;
+    outline: none;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+#search-button{
+    cursor: pointer;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px 40px;
+    border: none;
+    background: #fff;
+}
+#cards-container{
+    background: rgb(228,167,136);
+    display: grid;
+    grid-template-columns: repeat(4 ,minmax(200px, 200px));
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.character-card{
+    box-shadow: 0 5px 20px -10px rgba(0,0,0,.75);
+    background: #ddd;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    max-height: 350px;
+}
+.card-img{
+    object-fit: cover;
+    box-sizing: inherit;
+    width: 200px;
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+}
+.card-img:hover{
+    opacity: 1;
+    border: #000 2px solid;
+}
+.card-img:hover div{
+    border: #000 2px solid;
+}
+#card-inf{
+    font-family: 'Yusei Magic', sans-serif;
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+}
+.card-data{
+    margin: 3px;
+}
+#flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 #main{
+    box-shadow: 0 5px 20px -10px rgba(0,0,0,.75);
+    align-self: center;
     background: #ddd;
     display: flex;
     padding: 20px;
     border-radius: 10px;
+    transition: none;
 }
 #image{
+    object-fit: cover;
     border-radius: 50%;
     border: #333 solid 2px;
     margin: 0 20px 0 0;
@@ -49,7 +157,35 @@ body{
     font-size: 40px;
     color: rgb(151,206,76);
 }
-button{
+#footer{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px -8px;
+    padding: 10px 20px;
+    bottom: 0;
+    color: #fff;
+    background: rgb(36, 53, 44);
+}
+#api-text{
+    text-decoration: none;
+    color: #fff;
+}
+#api-text:hover{
+    color: rgb(151,206,76);
+    text-decoration: underline;
+}
+.icon{
+    color: #fff;
+    font-size: 25px;
+    margin: 0 10px;
+}
+.icon:hover{
+    color: #999;
+}
+#boton{
+    outline: none;
     margin-top: 20px;
     padding: 5px 10px;
     background: rgb(68,40,29);
@@ -60,11 +196,32 @@ button{
     color: rgb(151,206,76);
     cursor: pointer;
     border: #000 solid 2px;
+    transition: all 0.2s ease-in-out;
 }
-button:hover{
+#boton:hover{
     background: rgb(48,20,9);
 }
+@media(max-width: 1200px){
+    #search-field{
+        flex-direction: column;
+    }
+    #name-field{
+        margin: 0 0 10px 0;
+        width: 100%;
+    }
+    .dropdown{
+        margin: 0 0 10px 10px;
+        width: 45%;
+    }
+}
 @media(max-width: 800px){
+    #footer{
+        flex-direction: column;
+        text-align: center;
+    }
+    #cards-container{
+        grid-template-columns: auto;
+    }
     #image{
         margin: 0 50px;
         justify-self: center;
@@ -88,5 +245,8 @@ button:hover{
     .info-ind{
         text-align: center;
         font-size: 30px;
+    }
+    #boton{
+        margin: 0;
     }
 }
