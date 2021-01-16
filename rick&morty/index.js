@@ -42,7 +42,6 @@ const getCharacterBysearch = (URLSEARCH) =>{
     fetch(URLSEARCH)
     .then( response => response.json())
     .then( response => {
-        console.log(response)
         if(response.error == "There is nothing here"){
             content+=`
                 <h2>Opps! seems the character you searched doesn't exit</h2>
